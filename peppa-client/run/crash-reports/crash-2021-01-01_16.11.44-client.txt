@@ -1,0 +1,48 @@
+---- Minecraft Crash Report ----
+// Daisy, daisy...
+
+Time: 1/1/21, 4:11 PM
+Description: Initializing game
+
+java.lang.ArrayIndexOutOfBoundsException: Index 6 out of bounds for length 6
+	at tradingbooch12.peppaclient.modules.sound.MusicPlayer.<init>(MusicPlayer.java:29)
+	at tradingbooch12.peppaclient.Client.start(Client.java:30)
+	at net.minecraft.client.Minecraft.<init>(Minecraft.java:501)
+	at net.minecraft.client.main.Main.main(Main.java:149)
+	at mcp.client.Start.main(Start.java:17)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Stacktrace:
+	at tradingbooch12.peppaclient.modules.sound.MusicPlayer.<init>(MusicPlayer.java:29)
+	at tradingbooch12.peppaclient.Client.start(Client.java:30)
+	at net.minecraft.client.Minecraft.<init>(Minecraft.java:501)
+
+-- Initialization --
+Details:
+Stacktrace:
+	at net.minecraft.client.main.Main.main(Main.java:149)
+	at mcp.client.Start.main(Start.java:17)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.16.4
+	Minecraft Version ID: 1.16.4
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 14.0.1, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode, sharing), Oracle Corporation
+	Memory: 624188880 bytes (595 MB) / 943718400 bytes (900 MB) up to 2661285888 bytes (2538 MB)
+	CPUs: 8
+	JVM Flags: 0 total; 
+	Launched Version: mcp
+	Backend library: LWJGL version 3.2.2 build 10
+	Backend API: AMD Radeon(TM) RX Vega 11 Graphics GL version 4.6.13596 Compatibility Profile Context 20.10.26.01 27.20.1026.1003, ATI Technologies Inc.
+	GL Caps: Using framebuffer using OpenGL 3.0
+	Using VBOs: Yes
+	Is Modded: Very likely; Jar signature invalidated
+	Type: Client (map_client.txt)
+	CPU: 8x AMD Ryzen 5 3400G with Radeon Vega Graphics 

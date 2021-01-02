@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+    <mapAttribute key="org.eclipse.debug.core.environmentVariables">
+        <mapEntry key="assetDirectory" value="C:\Users\Owner\.gradle\caches\forge_gradle\assets"/>
+    </mapAttribute>
+    <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="net.minecraft.server.MinecraftServer"/>
+    <stringAttribute key="org.eclipse.jdt.launching.MODULE_NAME" value="mcp-reborn"/>
+    <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="mcp-reborn"/>
+    <stringAttribute key="org.eclipse.jdt.launching.WORKING_DIRECTORY" value="D:\Users\Owner\Documents\Development\java\minecraft\peppa-client\run"/>
+</launchConfiguration>
