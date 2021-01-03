@@ -15,7 +15,7 @@ public class Client {
 	private static Minecraft mc;
 	
 	public static final String NAME = "Peppa Client";
-	public static final String VERSION = "v0.0.1a";
+	public static final String VERSION = "v0.0.1b";
 	
 	private static List<Modules> modules;
 	
@@ -35,7 +35,7 @@ public class Client {
 	}
 	
 	public static void keyPressed(int keyCode) {
-		if (keyCode == 116) chat = true;
+		if (keyCode == 116 || keyCode == 47) chat = true;
 		
 		if (!chat) {
 			for (Modules m : modules) {
