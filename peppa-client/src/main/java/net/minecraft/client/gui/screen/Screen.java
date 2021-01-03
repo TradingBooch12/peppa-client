@@ -40,8 +40,6 @@ import net.minecraft.util.text.event.ClickEvent;
 import net.minecraft.util.text.event.HoverEvent;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import tradingbooch12.peppaclient.Client;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -77,7 +75,6 @@ public abstract class Screen extends FocusableGui implements IScreen, IRenderabl
       for(int i = 0; i < this.buttons.size(); ++i) {
          this.buttons.get(i).render(matrixStack, mouseX, mouseY, partialTicks);
       }
-
    }
 
    public boolean keyPressed(int keyCode, int scanCode, int modifiers) {

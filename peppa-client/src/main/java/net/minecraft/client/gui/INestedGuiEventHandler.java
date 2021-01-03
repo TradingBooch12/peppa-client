@@ -8,7 +8,6 @@ import java.util.function.Supplier;
 import javax.annotation.Nullable;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import tradingbooch12.peppaclient.Client;
 
 @OnlyIn(Dist.CLIENT)
 public interface INestedGuiEventHandler extends IGuiEventListener {

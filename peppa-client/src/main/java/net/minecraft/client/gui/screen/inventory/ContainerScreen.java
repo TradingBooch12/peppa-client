@@ -11,6 +11,8 @@ import net.minecraft.client.gui.IHasContainer;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.util.InputMappings;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.passive.PigEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.ClickType;
 import net.minecraft.inventory.container.Container;
@@ -81,7 +83,9 @@ public abstract class ContainerScreen<T extends Container> extends Screen implem
       this.guiLeft = (this.width - this.xSize) / 2;
       this.guiTop = (this.height - this.ySize) / 2;
    }
-
+   
+   float x = 0, y = 0;
+   
    public void render(MatrixStack matrixStack, int mouseX, int mouseY, float partialTicks) {
       int i = this.guiLeft;
       int j = this.guiTop;
@@ -154,6 +158,17 @@ public abstract class ContainerScreen<T extends Container> extends Screen implem
 
       RenderSystem.popMatrix();
       RenderSystem.enableDepthTest();
+      
+      x += 0.1f;
+      y += 0.1f;
+      
+      int xPos = minecraft.getMainWindow().getScaledWidth() / 3 - 100;
+      int yPos = minecraft.getMainWindow().getScaledHeight() / 2 + 10;
+      
+      int xPos1 = ((minecraft.getMainWindow().getScaledWidth() / 3) * 2 + 100);
+      
+      InventoryScreen.drawEntityOnScreen1(xPos, yPos, 50, x, y, new PigEntity(EntityType.PIG, minecraft.world));
+      InventoryScreen.drawEntityOnScreen1(xPos1, yPos, 50, x, y, new PigEntity(EntityType.PIG, minecraft.world));
    }
 
    protected void renderHoveredTooltip(MatrixStack matrixStack, int x, int y) {

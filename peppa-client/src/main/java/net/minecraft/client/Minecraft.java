@@ -496,11 +496,10 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       this.mainWindow.setVsync(this.gameSettings.vsync);
       this.mainWindow.setRawMouseInput(this.gameSettings.rawMouseInput);
       this.mainWindow.setLogOnGlError();
+      this.updateWindowSize();
       
-      //Client Code
       Client.start();
       
-      this.updateWindowSize();
       if (s != null) {
          this.displayGuiScreen(new ConnectingScreen(new MainMenuScreen(), this, s, i));
       } else {
@@ -520,7 +519,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
    }
 
    public void setDefaultMinecraftTitle() {
-      this.mainWindow.setWindowTitle("Minecraft* 1.16.4 | " + Client.NAME + " " + Client.VERSION);
+      this.mainWindow.setWindowTitle(this.getWindowTitle() + " | " + Client.NAME + " " + Client.VERSION);
    }
 
    private String getWindowTitle() {

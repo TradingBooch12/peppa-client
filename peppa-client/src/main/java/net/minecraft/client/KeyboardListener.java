@@ -333,7 +333,7 @@ public class KeyboardListener {
                      this.mc.gameSettings.hideGUI = !this.mc.gameSettings.hideGUI;
                   }
                }
-               
+
                if (flag1) {
                   KeyBinding.setKeyBindState(inputmappings$input, false);
                } else {

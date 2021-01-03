@@ -2,7 +2,6 @@ package net.minecraft.client.gui;
 
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import tradingbooch12.peppaclient.Client;
 
 @OnlyIn(Dist.CLIENT)
 public interface IGuiEventListener {

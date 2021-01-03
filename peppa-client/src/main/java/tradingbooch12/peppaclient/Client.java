@@ -8,6 +8,8 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
 import tradingbooch12.peppaclient.modules.Modules;
 import tradingbooch12.peppaclient.modules.gui.Fps;
+import tradingbooch12.peppaclient.modules.gui.Peppa;
+import tradingbooch12.peppaclient.modules.gui.Player;
 import tradingbooch12.peppaclient.modules.render.Bright;
 
 public class Client {
@@ -15,11 +17,13 @@ public class Client {
 	private static Minecraft mc;
 	
 	public static final String NAME = "Peppa Client";
-	public static final String VERSION = "v0.0.1b";
+	public static final String VERSION = "v0.0.2";
 	
 	private static List<Modules> modules;
 	
 	public static boolean chat = false;
+	
+	private static int nameY;
 	
 	public static void start() {
 		mc = Minecraft.getInstance();
@@ -28,9 +32,12 @@ public class Client {
 		
 		register(new Bright());
 		register(new Fps());
+		register(new Player());
+		register(new Peppa());
+		
 	}
 
-	public static void register(Modules module) {
+	private static void register(Modules module) {
 		modules.add(module);
 	}
 	
@@ -55,9 +62,11 @@ public class Client {
 	public static void renderGui(MatrixStack stack) {
 		for (Modules m : modules) {
 			m.renderGui(stack);
-		} 
+		}
 		
-		mc.fontRenderer.drawString(stack, Client.NAME + " " + Client.VERSION, 10, mc.getMainWindow().getScaledHeight() - 15, 0xffffff);
+		nameY = mc.getMainWindow().getScaledHeight() - 15;
+		
+		mc.fontRenderer.drawString(stack, Client.NAME + " " + Client.VERSION, 10, nameY, 0xffffff);
 	}
 	
 }

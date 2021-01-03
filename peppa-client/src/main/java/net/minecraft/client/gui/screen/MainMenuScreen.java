@@ -27,11 +27,14 @@ import net.minecraft.util.Util;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.registry.DynamicRegistries;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.BossInfo.Color;
 import net.minecraft.world.gen.settings.DimensionGeneratorSettings;
 import net.minecraft.world.storage.SaveFormat;
 import net.minecraft.world.storage.WorldSummary;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import tradingbooch12.peppaclient.Client;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -240,7 +243,8 @@ public class MainMenuScreen extends Screen {
             RenderSystem.popMatrix();
          }
 
-         String s = "Minecraft " + SharedConstants.getVersion().getName();
+         String s = "Minecraft " + SharedConstants.getVersion().getName() + " " + Client.NAME;
+         
          if (this.minecraft.isDemo()) {
             s = s + " Demo";
          } else {

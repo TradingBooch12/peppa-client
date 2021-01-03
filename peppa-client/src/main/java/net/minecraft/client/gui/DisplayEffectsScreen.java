@@ -1,13 +1,18 @@
 package net.minecraft.client.gui;
 
+import java.util.Collection;
+
 import com.google.common.collect.Ordering;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
-import java.util.Collection;
+
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
+import net.minecraft.client.gui.screen.inventory.InventoryScreen;
 import net.minecraft.client.renderer.texture.PotionSpriteUploader;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.resources.I18n;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.passive.PigEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.potion.Effect;
@@ -40,13 +45,12 @@ public abstract class DisplayEffectsScreen<T extends Container> extends Containe
       }
 
    }
-
+   
    public void render(MatrixStack matrixStack, int mouseX, int mouseY, float partialTicks) {
       super.render(matrixStack, mouseX, mouseY, partialTicks);
       if (this.hasActivePotionEffects) {
          this.renderEffects(matrixStack);
       }
-
    }
 
    private void renderEffects(MatrixStack matrixStack) {

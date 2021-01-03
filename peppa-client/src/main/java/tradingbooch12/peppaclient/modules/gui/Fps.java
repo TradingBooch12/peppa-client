@@ -15,9 +15,9 @@ public class Fps extends Modules {
 
 	@Override
 	public void renderGui(MatrixStack stack) {
-		if (!this.isToggle()) return;
+		if (!this.isToggle() || mc.gameSettings.showDebugInfo) return;
 		
-		mc.fontRenderer.drawString(stack, "Fps: " + Minecraft.debugFPS, 10, 10, 0xffffff);
+		mc.fontRenderer.drawString(stack, Minecraft.debugFPS + " fps", 10, 10, 0xffffff);
 	}
 
 }
